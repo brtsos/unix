@@ -1,4 +1,4 @@
-yes | sudo pacman -Sy nvidia nvidia-utils nvidia-settings i3-gaps i3status i3lock git docker docker-compose dmenu firefox ttf-dejavu virtualbox virtualbox-host-modules-arch virtualbox-guest-iso vagrant openssh zip &&
+yes | sudo pacman -Sy nvidia nvidia-utils nvidia-settings xorg-xrendr i3-gaps i3status i3lock git docker docker-compose dmenu firefox ttf-dejavu virtualbox virtualbox-host-modules-arch virtualbox-guest-iso vagrant openssh zip &&
 sudo cp xorg.conf /etc/X11/xorg.conf  &&
 sudo cp .xinitrc ~/.xinitrc  &&
 git config --global user.email "brtsos@gmail.com" &&
