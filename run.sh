@@ -37,7 +37,7 @@ yay -S slack-desktop &&
 yay -S teams &&
 yay -S skypeforlinux-preview-bin &&
 
-# install st console
+# install st console TODO Change to my repo
 cd ~ &&
 mkdir -p code &&
 cd code/ &&
@@ -47,8 +47,9 @@ cd st &&
 sudo make install &&
 
 # install apache
-
-
+sudo cp httpd.conf /etc/httpd/httpd.conf &&
+sudo systemctl start apache &&
+sudo systemctl enable apache &&
 
 # install phpstorm
 cd /tmp/ &&
