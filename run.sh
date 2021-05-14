@@ -1,7 +1,10 @@
-yes | sudo pacman -Syi curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache  openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip &&
+yes | sudo pacman -Syi curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip &&
 
 # create user bin folder
-mkdir -p ~/bin
+mkdir -p ~/bin &&
+
+# install game to colorize bach output
+gem install colorize &&
 
 # install mysql
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql &&
@@ -18,6 +21,7 @@ sudo $MYSQL -u root -p -e "$SQL" &&
 sudo cp xorg.conf /etc/X11/xorg.conf  &&
 sudo cp nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp .xinitrc ~/.xinitrc  &&
+sudo cp resolv.conf /etc/resolv.conf  &&
 
 # set github user
 git config --global user.email "brtsos@gmail.com" &&

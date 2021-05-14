@@ -6,6 +6,7 @@ files = {
   '/home/brtsos/unix/.xinitrc' =>'/home/brtsos/.xinitrc',
   '/home/brtsos/unix/xorg.conf' =>'/etc/X11/xorg.conf',
   '/home/brtsos/unix/nobeep.conf' =>'/etc/modprobe.d/nobeep.conf',
+  '/home/brtsos/unix/resolv.conf' =>'/etc/resolv.conf',
 }
 
 files.each do |template, original|
