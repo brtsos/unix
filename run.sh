@@ -5,10 +5,11 @@ mkdir -p ~/bin &&
 mkdir -p ~/.local/share/zsh &&
 mkdir -p ~/.config/wget/wgetrc &&
 mkdir -p ~/.config/zsh &&
+sudo mkdir -p /etc/bluetooth &&
 
-sudo chmod 755 -R  ~/.config/wget
+#sudo chmod 755 -R  ~/.config/wget
 
-yes | sudo pacman -Syi curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip zsh
+yes | sudo pacman -S alsa-utils bluez bluez-utils curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -17,7 +18,13 @@ sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp files/.xinitrc ~/.xinitrc &&
 sudo cp files/resolv.conf /etc/resolv.conf &&
+sudo cp files/alsa.conf /usr/share/alsa/alsa.conf &&
+sudo cp files/main.conf /etc/bluetooth/main.conf &&
 touch ~/.config/zsh/.zshrc &&
+
+# start bluetooth
+sudo systemctl start bluetooth &&
+sudo systemctl enable bluetooth &&
 
 # install oh-my-zsh
 cp -R files/oh-my-zsh ~/.local/share/oh-my-zsh
