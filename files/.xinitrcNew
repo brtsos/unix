@@ -1,0 +1,7 @@
+#!/bin/sh
+export _JAVA_AWT_WM_NONREPARENTING=1
+xrdb -merge ~/.Xresources
+feh --bg-max --randomize ~/Pictures/wall/* &
+setxkbmap -option caps:escape
+exec dwm
+#exec startxfce4
