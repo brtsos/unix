@@ -17,7 +17,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 #sudo chmod 755 -R  ~/.config/wget
 
-yes | sudo pacman -S alsa-utils bluez bluez-libs bluez-utils curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip zsh
+yes | sudo pacman -S alsa-utils bluez bluez-libs bluez-utils curl docker docker-compose dmenu firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
