@@ -4,6 +4,7 @@ require 'colorize'
 files = {
   '/home/brtsos/unix/files/httpd.conf' => '/etc/httpd/conf/httpd.conf',
   '/home/brtsos/unix/files/.xinitrc' => '/home/brtsos/.xinitrc',
+  '/home/brtsos/unix/files/.Xresources' => '/home/brtsos/.Xresources',
   '/home/brtsos/unix/files/xorg.conf' => '/etc/X11/xorg.conf',
   '/home/brtsos/unix/files/nobeep.conf' => '/etc/modprobe.d/nobeep.conf',
   '/home/brtsos/unix/files/resolv.conf' => '/etc/resolv.conf',

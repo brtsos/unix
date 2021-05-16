@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# start wifi
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
+
+# You have to connect manualy
+nmcli device wifi list
+nmcli device wifi connect SSID_or_BSSID password PASSWORD
+
 # create user bin folder
 mkdir -p ~/bin &&
 mkdir -p ~/.local/share/zsh &&
@@ -9,7 +17,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 #sudo chmod 755 -R  ~/.config/wget
 
-yes | sudo pacman -S alsa-utils bluez bluez-utils curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip zsh
+yes | sudo pacman -S alsa-utils bluez bluez-libs bluez-utils curl docker docker-compose dmenu firefox git i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -17,6 +25,7 @@ cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
 sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp files/.xinitrc ~/.xinitrc &&
+sudo cp files/.Xresources ~/.Xresources &&
 sudo cp files/resolv.conf /etc/resolv.conf &&
 sudo cp files/alsa.conf /usr/share/alsa/alsa.conf &&
 sudo cp files/main.conf /etc/bluetooth/main.conf &&
@@ -25,6 +34,8 @@ touch ~/.config/zsh/.zshrc &&
 # start bluetooth
 sudo systemctl start bluetooth &&
 sudo systemctl enable bluetooth &&
+sudo rfkill unblock all &&
+sudo systemctl restart bluetooth &&
 
 # install oh-my-zsh
 cp -R files/oh-my-zsh ~/.local/share/oh-my-zsh
