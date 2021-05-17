@@ -113,6 +113,5 @@ wget https://getcomposer.org/composer.phar &&
 sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer
 
 # docker
-sudo groupadd docker
 sudo usermod -aG docker brtsos
 
