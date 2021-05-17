@@ -37,7 +37,7 @@ sudo rfkill unblock all &&
 sudo systemctl restart bluetooth &&
 
 # install oh-my-zsh
-cp -R files/oh-my-zsh ~/.local/share/oh-my-zsh
+cp -r files/oh-my-zsh ~/.local/share/
 
 #change default shell to zsh
 chsh -s /usr/bin/zsh &&
@@ -55,6 +55,11 @@ Q1="GRANT ALL ON *.* TO 'brtsos'@'localhost';"
 Q2="FLUSH PRIVILEGES;"
 SQL="${Q0}${Q1}${Q2}"
 sudo $MYSQL -u root -p -e "$SQL" && 
+
+# install apache
+sudo cp files/httpd.conf /etc/httpd/httpd.conf &&
+sudo systemctl start apache &&
+sudo systemctl enable apache &&
 
 # set github user
 git config --global user.email "brtsos@gmail.com" &&
@@ -85,11 +90,6 @@ rm -Rf st &&
 git clone https://github.com/LukeSmithxyz/st.git &&
 cd st &&
 sudo make install &&
-
-# install apache
-sudo cp files/httpd.conf /etc/httpd/httpd.conf &&
-sudo systemctl start apache &&
-sudo systemctl enable apache &&
 
 # install phpstorm
 cd /tmp/ &&
