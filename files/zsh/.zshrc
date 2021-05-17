@@ -94,7 +94,7 @@ alias reload="source ~/.config/zsh/.zshrc"
 alias blue="bash ${HOME}/.scripts/blue.sh"
 #alias vim='nvim'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-alias cp='cp -R'
+#alias cp='cp -R'
 
 #eval `keychain --eval --quiet --nogui --noask --agents gpg,ssh id_rsa CEE8F14A8AECDD5CB88D13AC65DA109391765073`
 
@@ -107,3 +107,5 @@ export PATH="$HOME/gems/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+DISABLE_AUTO_UPDATE="true"

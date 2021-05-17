@@ -5,8 +5,8 @@ sudo systemctl start NetworkManager
 sudo systemctl enable NetworkManager
 
 # You have to connect manualy
-nmcli device wifi list
-nmcli device wifi connect SSID_or_BSSID password PASSWORD
+#nmcli device wifi list
+#nmcli device wifi connect SSID_or_BSSID password PASSWORD
 
 # create user bin folder
 mkdir -p ~/bin &&
@@ -20,6 +20,7 @@ sudo pacman -S alsa-utils blueman bluez bluez-libs bluez-utils curl docker docke
 # copy configs
 cp files/.zshenv ~/.zshenv &&
 cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
+cp files/config ~/.config/i3/config &&
 sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp files/.xinitrc ~/.xinitrc &&
@@ -28,7 +29,6 @@ sudo cp files/resolv.conf /etc/resolv.conf &&
 sudo cp files/alsa.conf /usr/share/alsa/alsa.conf &&
 sudo cp files/main.conf /etc/bluetooth/main.conf &&
 sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
-touch ~/.config/zsh/.zshrc &&
 
 # start bluetooth
 sudo systemctl start bluetooth &&
@@ -57,9 +57,9 @@ SQL="${Q0}${Q1}${Q2}"
 sudo $MYSQL -u root -p -e "$SQL" && 
 
 # install apache
-sudo cp files/httpd.conf /etc/httpd/httpd.conf &&
-sudo systemctl start apache &&
-sudo systemctl enable apache &&
+sudo cp files/httpd.conf /etc/httpd/conf/httpd.conf &&
+sudo systemctl start httpd &&
+sudo systemctl enable httpd &&
 
 # set github user
 git config --global user.email "brtsos@gmail.com" &&

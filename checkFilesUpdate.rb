@@ -12,6 +12,7 @@ files = {
   '/home/brtsos/unix/files/alsa.conf' => '/usr/share/alsa/alsa.conf',
   '/home/brtsos/unix/files/.zshenv' => '/home/brtsos/.zshenv',
   '/home/brtsos/unix/files/zsh/.zshrc' => '/home/brtsos/.config/zsh/.zshrc',
+  '/home/brtsos/unix/files/config' => '/home/brtsos/.config/i3/config',
 }
 
 files.each do |template, original|
