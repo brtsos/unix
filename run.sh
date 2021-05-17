@@ -91,7 +91,7 @@ mkdir -p code &&
 cd code/ &&
 rm -Rf st &&
 git clone https://github.com/LukeSmithxyz/st.git &&
-cp files/config.h ~/code/st/config.h &&
+cp ~/unix/files/config.h ~/code/st/config.h &&
 cd st &&
 sudo make install &&
 
