@@ -12,17 +12,20 @@ sudo systemctl enable NetworkManager
 mkdir -p ~/bin &&
 mkdir -p ~/proj &&
 mkdir -p ~/.local/share/zsh &&
+mkdir -p ~/.config/dunst &&
 mkdir -p ~/.config/i3 &&
 mkdir -p ~/.config/wget/wgetrc &&
 mkdir -p ~/.config/zsh &&
 sudo mkdir -p /etc/bluetooth &&
 
-sudo pacman -S alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu feh firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql pavucontrol php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql pavucontrol php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
 cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
 cp files/config ~/.config/i3/config &&
+cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc &&
+sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
 sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp files/.xinitrc ~/.xinitrc &&
@@ -116,3 +119,10 @@ sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer
 # docker
 sudo usermod -aG docker brtsos
 
+# install fonts
+sudo pacman -S \
+	noto-fonts \
+	noto-fonts-emoji \
+	ttf-croscore 
+
+yay -S ttf-google-fonts-typewolf ttf-ms-fonts ttf-mac-fonts otf-san-francisco
