@@ -12,6 +12,7 @@ sudo systemctl enable NetworkManager
 mkdir -p ~/bin &&
 mkdir -p ~/proj &&
 mkdir -p ~/.local/share/zsh &&
+mkdir -p ~/.config/i3 &&
 mkdir -p ~/.config/wget/wgetrc &&
 mkdir -p ~/.config/zsh &&
 sudo mkdir -p /etc/bluetooth &&
@@ -90,11 +91,11 @@ mkdir -p code &&
 cd code/ &&
 rm -Rf st &&
 git clone https://github.com/LukeSmithxyz/st.git &&
-cp files/config.h ~/code/st/config.h
+cp files/config.h ~/code/st/config.h &&
 cd st &&
 sudo make install &&
 
-cd code/ &&
+cd ~/code/ &&
 rm -Rf sxiv &&
 git clone https://github.com/muennich/sxiv.git &&
 cd sxiv &&
