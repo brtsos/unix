@@ -17,7 +17,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 #sudo chmod 755 -R  ~/.config/wget
 
-yes | sudo pacman -S alsa-utils bluez bluez-libs bluez-utils curl docker docker-compose dmenu firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xrandr zip zsh
+yes | sudo pacman -S alsa-utils bluez bluez-libs bluez-utils curl docker docker-compose dmenu feh firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -29,6 +29,7 @@ sudo cp files/.Xresources ~/.Xresources &&
 sudo cp files/resolv.conf /etc/resolv.conf &&
 sudo cp files/alsa.conf /usr/share/alsa/alsa.conf &&
 sudo cp files/main.conf /etc/bluetooth/main.conf &&
+sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
 touch ~/.config/zsh/.zshrc &&
 
 # start bluetooth
@@ -70,10 +71,13 @@ cd /opt/yay-git &&
 makepkg -si &&
 
 # install AUR programs
+yay -S clipit &&
 yay -S google-chrome --noanswerclean &&
+yay -S i3exit &&
+yay -S i3-scrot &&
+yay -S skypeforlinux-preview-bin &&
 yay -S slack-desktop &&
 yay -S teams &&
-yay -S skypeforlinux-preview-bin &&
 
 # install st console TODO Change to my repo
 cd ~ &&

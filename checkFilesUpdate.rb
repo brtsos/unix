@@ -7,8 +7,11 @@ files = {
   '/home/brtsos/unix/files/.Xresources' => '/home/brtsos/.Xresources',
   '/home/brtsos/unix/files/xorg.conf' => '/etc/X11/xorg.conf',
   '/home/brtsos/unix/files/nobeep.conf' => '/etc/modprobe.d/nobeep.conf',
-  '/home/brtsos/unix/files/resolv.conf' => '/etc/resolv.conf',
+  '/home/brtsos/unix/files/mkinitcpio.conf' => '/etc/mkinitcpio.conf',
+  '/home/brtsos/unix/files/main.conf' => '/etc/bluetooth/main.conf',
   '/home/brtsos/unix/files/alsa.conf' => '/usr/share/alsa/alsa.conf',
+  '/home/brtsos/unix/files/.zshenv' => '/home/brtsos/.zshenv',
+  '/home/brtsos/unix/files/zsh/.zshrc' => '/home/brtsos/.config/zsh/.zshrc',
 }
 
 files.each do |template, original|
