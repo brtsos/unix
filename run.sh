@@ -10,12 +10,13 @@ sudo systemctl enable NetworkManager
 
 # create user bin folder
 mkdir -p ~/bin &&
+mkdir -p ~/proj &&
 mkdir -p ~/.local/share/zsh &&
 mkdir -p ~/.config/wget/wgetrc &&
 mkdir -p ~/.config/zsh &&
 sudo mkdir -p /etc/bluetooth &&
 
-sudo pacman -S alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu feh firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql pavucontrol php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu feh firefox git gvfs i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm mysql pavucontrol php7 php7-apache pulseaudio pulseaudio-alsa pulseaudio-bluetooth ruby openssh thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -81,6 +82,7 @@ yay -S i3-scrot &&
 yay -S skypeforlinux-preview-bin &&
 yay -S slack-desktop &&
 yay -S teams &&
+yay -S xournal &&
 
 # install st console TODO Change to my repo
 cd ~ &&
@@ -88,7 +90,14 @@ mkdir -p code &&
 cd code/ &&
 rm -Rf st &&
 git clone https://github.com/LukeSmithxyz/st.git &&
+cp files/config.h ~/code/st/config.h
 cd st &&
+sudo make install &&
+
+cd code/ &&
+rm -Rf sxiv &&
+git clone https://github.com/muennich/sxiv.git &&
+cd sxiv &&
 sudo make install &&
 
 # install phpstorm
@@ -102,3 +111,8 @@ sudo ln -sf ~/bin/phpstorm/bin/phpstorm.sh /usr/bin/phpstorm &&
 cd ~/bin &&
 wget https://getcomposer.org/composer.phar &&
 sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer
+
+# docker
+sudo groupadd docker
+sudo usermod -aG docker brtsos
+

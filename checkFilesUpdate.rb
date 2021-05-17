@@ -13,6 +13,7 @@ files = {
   '/home/brtsos/unix/files/.zshenv' => '/home/brtsos/.zshenv',
   '/home/brtsos/unix/files/zsh/.zshrc' => '/home/brtsos/.config/zsh/.zshrc',
   '/home/brtsos/unix/files/config' => '/home/brtsos/.config/i3/config',
+  '/home/brtsos/unix/files/config.h' => '/home/brtsos/code/st/config.h',
 }
 
 files.each do |template, original|
