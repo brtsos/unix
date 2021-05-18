@@ -4,7 +4,7 @@ require 'colorize'
 files = {
   '/home/brtsos/unix/files/httpd.conf' => '/etc/httpd/conf/httpd.conf',
   '/home/brtsos/unix/files/.xinitrc' => '/home/brtsos/.xinitrc',
-  '/home/brtsos/unix/files/.Xresources' => '/home/brtsos/.Xresources',
+#  '/home/brtsos/unix/files/.Xresources' => '/home/brtsos/.Xresources',
   '/home/brtsos/unix/files/xorg.conf' => '/etc/X11/xorg.conf',
   '/home/brtsos/unix/files/nobeep.conf' => '/etc/modprobe.d/nobeep.conf',
   '/home/brtsos/unix/files/mkinitcpio.conf' => '/etc/mkinitcpio.conf',
@@ -14,11 +14,13 @@ files = {
   '/home/brtsos/unix/files/zsh/.zshrc' => '/home/brtsos/.config/zsh/.zshrc',
   '/home/brtsos/unix/files/config' => '/home/brtsos/.config/i3/config',
   '/home/brtsos/unix/files/config.h' => '/home/brtsos/code/st/config.h',
+  '/home/brtsos/unix/files/php.ini' => '/etc/php7/php.ini',
 }
 
 files.each do |template, original|
   if !FileUtils.compare_file(template, original)
     puts "This files must be update: #{template} becaus #{original} changed!".red
+    puts "To update: 'sudo cp #{original} #{template}'".green
   end
 end
 
