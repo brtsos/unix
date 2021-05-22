@@ -63,6 +63,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Start Applications
 bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec thunar
+bindsym $mod+F6 exec scrot -u -e 'echo "![$f]($f)" >> raport.md && md2pdf raport.md'
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
