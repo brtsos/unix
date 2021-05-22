@@ -28,6 +28,7 @@ cp files/.zshenv ~/.zshenv &&
 cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
 cp files/config ~/.config/i3/config &&
 cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc &&
+cp files/symfony ~/bin/symfony &&
 sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
 sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
@@ -117,6 +118,9 @@ sudo curl -L "https://download.jetbrains.com/product?code=PS&latest&distribution
 mkdir -p ~/bin/phpstorm && 
 tar -xf phpstorm.tar.gz -C ~/bin/phpstorm/ --strip 1 &&
 sudo ln -sf ~/bin/phpstorm/bin/phpstorm.sh /usr/bin/phpstorm &&
+
+# install symfony
+sudo ln -sf ~/bin/symfony /usr/local/bin/composer
 
 # install composer
 cd ~/bin &&
