@@ -66,6 +66,7 @@ bindsym $mod+F3 exec thunar
 bindsym $mod+F6 exec scrot -u -e 'echo "![$f]($f)" >> raport.md && md2pdf raport.md'
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+l --release exec /home/brtsos/code/scripts/headset.sh
+bindsym $mod+Shift+v --release exec mpv /dev/video0
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -96,6 +97,9 @@ exec --no-startup-id dunst
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# program on all workspaces
+bindsym $mod+Shift+w sticky toggle
 
 # start a terminal
 bindsym $mod+Return exec st
@@ -154,6 +158,9 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+for_window [class="mpv"] floating enable
+
 
 # focus the parent container
 bindsym $mod+a focus parent
