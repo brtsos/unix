@@ -11,6 +11,7 @@ sudo systemctl enable NetworkManager
 # create user bin folder
 mkdir -p ~/bin &&
 mkdir -p ~/proj &&
+mkdir -p ~/code/scripts &&
 mkdir -p ~/.local/share/gnupg &&
 mkdir -p ~/.local/share/zsh &&
 mkdir -p ~/.config/dunst &&
@@ -97,9 +98,7 @@ yay -S teams &&
 yay -S xournal &&
 
 # install st console TODO Change to my repo
-cd ~ &&
-mkdir -p code &&
-cd code/ &&
+cd ~/code/ &&
 rm -Rf st &&
 git clone https://github.com/LukeSmithxyz/st.git &&
 cp ~/unix/files/config.h ~/code/st/config.h &&

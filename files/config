@@ -65,6 +65,7 @@ bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec thunar
 bindsym $mod+F6 exec scrot -u -e 'echo "![$f]($f)" >> raport.md && md2pdf raport.md'
 bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+l --release exec /home/brtsos/code/scripts/headset.sh
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
