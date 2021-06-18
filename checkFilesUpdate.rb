@@ -19,6 +19,7 @@ files = {
   '/home/brtsos/unix/files/php.ini' => '/etc/php7/php.ini',
   '/home/brtsos/unix/files/etc/pam.d/passwd' => '/etc/pam.d/passwd',
   '/home/brtsos/unix/files/etc/pam.d/login' => '/etc/pam.d/login',
+  '/home/brtsos/unix/files/etc/systemd/logind.conf' => '/etc/systemd/logind.conf',
 }
 
 codeFiles.each do |file|

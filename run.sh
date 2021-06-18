@@ -42,6 +42,7 @@ sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
 sudo cp files/php.ini /etc/php7/php.ini &&
 sudo cp files/etc/pam.d/passwd /etc/pam.d/passwd &&
 sudo cp files/etc/pam.d/login /etc/pam.d/login &&
+sudo cp files/etc/systemd/logind.conf /etc/systemd/logind.conf &&
 
 # start bluetooth
 sudo systemctl start bluetooth &&
