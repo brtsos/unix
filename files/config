@@ -50,8 +50,8 @@ font xft:URWGothic-Book 11
 exec --no-startup-id xautolock -time 5 -locker "i3lock -i '/home/brtsos/unix/files/images/ArchWaveGrey.png'"
 
 
-bindsym $mod+Shift+F4 exec "sed -i -e 's/Xft.dpi: 100/Xft.dpi: 192/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output HDMI-0 --auto --output eDP-1-1 --off"
-bindsym $mod+Shift+F5 exec "sed -i -e 's/Xft.dpi: 192/Xft.dpi: 100/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output HDMI-0 --off --output eDP-1-1 --auto"
+bindsym $mod+Shift+F4 exec "sed -i -e 's/Xft.dpi: 130/Xft.dpi: 192/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output HDMI-0 --auto --output eDP-1-1 --off"
+bindsym $mod+Shift+F5 exec "sed -i -e 's/Xft.dpi: 192/Xft.dpi: 130/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output HDMI-0 --off --output eDP-1-1 --auto"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
