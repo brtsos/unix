@@ -35,7 +35,7 @@ end
 files.each do |template, original|
   if !FileUtils.compare_file(template, original)
     puts "This files must be update: #{template} becaus #{original} changed!".red
-    puts "To update: 'sudo cp #{original} #{template}'".green
+    puts "To update: 'sudo cp #{template} #{original}'".green
   end
 end
 
