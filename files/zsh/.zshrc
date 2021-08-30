@@ -98,7 +98,7 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 #eval `keychain --eval --quiet --nogui --noask --agents gpg,ssh id_rsa CEE8F14A8AECDD5CB88D13AC65DA109391765073`
 
-export PATH="/bin:/usr/bin:/sbin:/usr/local/bin:/home/bart/bin:/home/bart/Proj/FroshPluginUploader/bin:/home/bart/.gem/ruby/2.7.0/bin:/home/bart/.local/bin"
+export PATH="/bin:/usr/bin:/sbin:/usr/local/bin:/home/bart/bin:/home/bart/.gem/ruby/2.7.0/bin:/home/bart/.local/bin:/home/brtsos/.config/composer/vendor/bin"
 source $ZSH/oh-my-zsh.sh
 
 # Install Ruby Gems to ~/gems
