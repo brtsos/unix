@@ -95,6 +95,7 @@ alias blue="bash ${HOME}/.scripts/blue.sh"
 #alias vim='nvim'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 #alias cp='cp -R'
+eval $(thefuck --alias)
 
 #eval `keychain --eval --quiet --nogui --noask --agents gpg,ssh id_rsa CEE8F14A8AECDD5CB88D13AC65DA109391765073`
 

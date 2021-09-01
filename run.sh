@@ -22,7 +22,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 sudo chmod 700 ~/.local/share/gnupg &&
 
-sudo pacman -S anki alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm man mysql mvp pavucontrol php7 php7-apache php7-gd php7-intal php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S anki alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm man mysql mvp pavucontrol php7 php7-apache php7-gd php7-intal php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -129,7 +129,11 @@ sudo ln -sf ~/bin/symfony /usr/local/bin/composer
 cd ~/bin &&
 wget https://getcomposer.org/composer.phar &&
 sudo chmod 755 composer.phar &&
-sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer
+sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer &&
+composer global require phpstan/phpstan &&
+composer global require vimeo/psalm &&
+composer global require symplify/easy-coding-standard &&
+composer global require phpunit/phpunit
 
 # docker
 sudo usermod -aG docker brtsos
