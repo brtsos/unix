@@ -94,6 +94,9 @@ alias reload="source ~/.config/zsh/.zshrc"
 alias blue="bash ${HOME}/.scripts/blue.sh"
 #alias vim='nvim'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias stan='phpstan analyse -c phpstan.neon.dist'
+alias salm='psalm -c psalm.xml'
+alias fix='php-cs-fixer fix'
 #alias cp='cp -R'
 eval $(thefuck --alias)
 

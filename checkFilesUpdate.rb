@@ -15,6 +15,7 @@ files = {
   '/home/brtsos/unix/files/.zshenv' => '/home/brtsos/.zshenv',
   '/home/brtsos/unix/files/zsh/.zshrc' => '/home/brtsos/.config/zsh/.zshrc',
   '/home/brtsos/unix/files/config' => '/home/brtsos/.config/i3/config',
+  '/home/brtsos/unix/files/i3status/config' => '/home/brtsos/.config/i3status/config',
   '/home/brtsos/unix/files/config.h' => '/home/brtsos/code/st/config.h',
   '/home/brtsos/unix/files/php.ini' => '/etc/php7/php.ini',
   '/home/brtsos/unix/files/etc/pam.d/passwd' => '/etc/pam.d/passwd',

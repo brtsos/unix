@@ -16,18 +16,20 @@ mkdir -p ~/.local/share/gnupg &&
 mkdir -p ~/.local/share/zsh &&
 mkdir -p ~/.config/dunst &&
 mkdir -p ~/.config/i3 &&
+mkdir -p ~/.config/i3status &&
 mkdir -p ~/.config/wget/wgetrc &&
 mkdir -p ~/.config/zsh &&
 sudo mkdir -p /etc/bluetooth &&
 
 sudo chmod 700 ~/.local/share/gnupg &&
 
-sudo pacman -S anki alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm man mysql mvp pavucontrol php7 php7-apache php7-gd php7-intal php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S acpi anki alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm man mysql mvp pavucontrol php7 php7-apache php7-gd php7-intal php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
 cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
 cp files/config ~/.config/i3/config &&
+cp files/i3status/config ~/.config/i3status/config &&
 cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc &&
 cp files/symfony ~/bin/symfony &&
 sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
@@ -142,6 +144,7 @@ sudo usermod -aG docker brtsos
 sudo pacman -S \
 	noto-fonts \
 	noto-fonts-emoji \
-	ttf-croscore 
+	ttf-croscore \
+       	ttf-font-awesome
 
 yay -S ttf-google-fonts-typewolf ttf-ms-fonts ttf-mac-fonts otf-san-francisco ttf-ancient-fonts
