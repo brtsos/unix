@@ -94,6 +94,7 @@ cd /opt/yay-git &&
 makepkg -si &&
 
 # install AUR programs
+yay -S auto-cpufreq-git &&
 yay -S clipit &&
 yay -S google-chrome --noanswerclean &&
 yay -S i3exit &&
@@ -102,6 +103,10 @@ yay -S skypeforlinux-preview-bin &&
 yay -S slack-desktop &&
 yay -S teams &&
 yay -S xournal &&
+
+# enable auto-cpufreq
+sudo systemctl start auto-cpufreq &&
+sudo systemctl enable auto-cpufreq &&
 
 # install st console TODO Change to my repo
 cd ~/code/ &&
