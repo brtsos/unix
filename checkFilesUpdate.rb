@@ -9,8 +9,6 @@ if g.diff.to_s.length > 0
   puts "Repository must be commited!".red
 end
 
-puts g.worktrees.count
-
 codeFiles = Dir.entries("/home/brtsos/code/scripts/")
 
 files = {
