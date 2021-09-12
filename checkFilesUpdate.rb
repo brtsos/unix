@@ -1,5 +1,10 @@
 require 'fileutils'
 require 'colorize'
+require 'git'
+
+
+g = Git.open('/home/brtsos/unix')
+puts g.diff
 
 codeFiles = Dir.entries("/home/brtsos/code/scripts/")
 

@@ -62,6 +62,9 @@ chsh -s /usr/bin/zsh &&
 # install game to colorize bach output
 gem install colorize &&
 
+# install git gem to check changes
+gem install git &&
+
 # set php7 default php
 sudo ln /bin/php7 /usr/local/bin/php
 
