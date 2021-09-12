@@ -4,13 +4,12 @@ require 'git'
 
 
 g = Git.open('/home/brtsos/unix')
-diff = g.diff
 
-puts diff.to_s.length
-
-if diff != ''
-  puts "Repository must be pushed!".red
+if g.diff.to_s.length > 0
+  puts "Repository must be commited!".red
 end
+
+puts g.worktrees.count
 
 codeFiles = Dir.entries("/home/brtsos/code/scripts/")
 
