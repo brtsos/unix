@@ -6,7 +6,7 @@ require 'git'
 g = Git.open('/home/brtsos/unix')
 diff = g.diff
 
-puts diff
+puts diff.to_s.length
 
 if diff != ''
   puts "Repository must be pushed!".red
