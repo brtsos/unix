@@ -4,7 +4,11 @@ require 'git'
 
 
 g = Git.open('/home/brtsos/unix')
-puts g.diff
+diff = g.diff
+
+if diff != ''
+  puts "Repository must be pushed!".red
+end
 
 codeFiles = Dir.entries("/home/brtsos/code/scripts/")
 
@@ -44,4 +48,3 @@ files.each do |template, original|
     puts "To update: 'sudo cp #{original} #{template}'".green
   end
 end
-
