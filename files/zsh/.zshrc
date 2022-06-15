@@ -89,7 +89,7 @@ plugins=(git history zsh-autosuggestions z zsh-syntax-highlighting)
 #
 # Example aliases
 alias conf="nvim ~/.config/zsh/.zshrc"
-alias screen="bash ${HOME}/Scripts/autostart/screen"
+#alias screen="bash ${HOME}/Scripts/autostart/screen"
 alias reload="source ~/.config/zsh/.zshrc"
 alias blue="bash ${HOME}/.scripts/blue.sh"
 #alias vim='nvim'

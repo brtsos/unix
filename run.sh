@@ -11,7 +11,6 @@ sudo systemctl enable NetworkManager
 # create user bin folder
 mkdir -p ~/bin &&
 mkdir -p ~/proj &&
-mkdir -p ~/code/scripts &&
 mkdir -p ~/.local/share/gnupg &&
 mkdir -p ~/.local/share/zsh &&
 mkdir -p ~/.config/dunst &&
@@ -23,17 +22,16 @@ sudo mkdir -p /etc/bluetooth &&
 
 sudo chmod 700 ~/.local/share/gnupg &&
 
-sudo pacman -S acpi anki alsa-utils blueman bluez bluez-libs bluez-utils curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor nvidia nvidia-settings nvidia-utils npm man mysql mvp pavucontrol php7 php7-apache php7-gd php7-intal php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S acpi alsa-utils blueman bluez bluez-libs bluez-utils composer curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor npm man mysql pavucontrol php7 php7-apache php7-gd php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler v4l-utils vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
 cp files/zsh/.zshrc ~/.config/zsh/.zshrc &&
 cp files/config ~/.config/i3/config &&
 cp files/i3status/config ~/.config/i3status/config &&
-cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc &&
-cp files/symfony ~/bin/symfony &&
+#cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc &&
 sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
-sudo cp files/xorg.conf /etc/X11/xorg.conf &&
+#sudo cp files/xorg.conf /etc/X11/xorg.conf &&
 sudo cp files/nobeep.conf /etc/modprobe.d/nobeep.conf &&
 sudo cp files/.xinitrc ~/.xinitrc &&
 sudo cp files/.Xresources ~/.Xresources &&
@@ -42,6 +40,7 @@ sudo cp files/alsa.conf /usr/share/alsa/alsa.conf &&
 sudo cp files/main.conf /etc/bluetooth/main.conf &&
 sudo cp files/mkinitcpio.conf /etc/mkinitcpio.conf &&
 sudo cp files/php.ini /etc/php7/php.ini &&
+sudo cp files/usr/local/bin/* /usr/local/bin &&
 sudo cp files/etc/pam.d/passwd /etc/pam.d/passwd &&
 sudo cp files/etc/pam.d/login /etc/pam.d/login &&
 sudo cp files/etc/systemd/logind.conf /etc/systemd/logind.conf &&
@@ -97,13 +96,16 @@ cd /opt/yay-git &&
 makepkg -si &&
 
 # install AUR programs
+yay -S 1password &&
 yay -S auto-cpufreq-git &&
 yay -S clipit &&
 yay -S google-chrome --noanswerclean &&
 yay -S i3exit &&
 yay -S i3-scrot &&
+yay -S jetbrains-toolbox &&
 yay -S skypeforlinux-preview-bin &&
 yay -S slack-desktop &&
+yay -S symfony-cli &&
 yay -S teams &&
 yay -S xournal &&
 
@@ -112,10 +114,10 @@ sudo systemctl start auto-cpufreq &&
 sudo systemctl enable auto-cpufreq &&
 
 # install st console TODO Change to my repo
-cd ~/code/ &&
+cd /usr/local/ &&
 rm -Rf st &&
-git clone https://github.com/LukeSmithxyz/st.git &&
-cp ~/unix/files/config.h ~/code/st/config.h &&
+git clone https://github.com/LukeSmithxyz/st &&
+cp ~/unix/files/st/config.h /usr/local/st/config.h &&
 cd st &&
 sudo make install &&
 
@@ -125,21 +127,7 @@ git clone https://github.com/muennich/sxiv.git &&
 cd sxiv &&
 sudo make install &&
 
-# install phpstorm
-cd /tmp/ &&
-sudo curl -L "https://download.jetbrains.com/product?code=PS&latest&distribution=linux" --output phpstorm.tar.gz &&
-mkdir -p ~/bin/phpstorm && 
-tar -xf phpstorm.tar.gz -C ~/bin/phpstorm/ --strip 1 &&
-sudo ln -sf ~/bin/phpstorm/bin/phpstorm.sh /usr/bin/phpstorm &&
-
-# install symfony
-sudo ln -sf ~/bin/symfony /usr/local/bin/composer
-
-# install composer
-cd ~/bin &&
-wget https://getcomposer.org/composer.phar &&
-sudo chmod 755 composer.phar &&
-sudo ln -sf ~/bin/composer.phar /usr/local/bin/composer &&
+# install composer packages
 composer global require phpstan/phpstan &&
 composer global require vimeo/psalm &&
 composer global require symplify/easy-coding-standard &&
