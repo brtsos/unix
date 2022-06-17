@@ -24,7 +24,7 @@ default_floating_border normal
 
 # Floating windows (like upload/download window in Firefox)
 floating_minimum_size 75 x 50
-floating_maximum_size 1000 x 800
+floating_maximum_size 1200 x 1080
 
 # Hide borders
 hide_edge_borders none
