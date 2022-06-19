@@ -7,7 +7,7 @@ mode = sys.argv[1] if len(sys.argv) > 1 else None # internal/external/video
 
 def main():
     if mode == "internal":
-        dpi = 240
+        dpi = 200
         os.system(rf"xrandr --output eDP-1 --auto --primary; xrandr --output DP-2 --off; xrandr --dpi {dpi}")
         xft_dpi(dpi)
         #alacritty(12)

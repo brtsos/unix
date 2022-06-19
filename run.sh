@@ -22,7 +22,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 sudo chmod 700 ~/.local/share/gnupg &&
 
-sudo pacman -S acpi alsa-utils blueman bluez bluez-libs bluez-utils composer curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor npm man mysql pavucontrol php7 php7-apache php7-gd php7-sodium php7-sqlite pipewire pipewire-pulse ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler v4l-utils vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S acpi alsa-utils audacity blueman bluez bluez-libs bluez-utils composer curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor npm man mysql pavucontrol php7 php7-apache php7-gd php7-sodium php7-sqlite pipewire pipewire-pulse pulseaudio-alsa ruby simplescreenrecorder openssh unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler v4l-utils vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xinput xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
