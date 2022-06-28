@@ -141,6 +141,6 @@ sudo pacman -S \
 	noto-fonts \
 	noto-fonts-emoji \
 	ttf-croscore \
-       	ttf-font-awesome
+       	ttf-font-awesome \
 
-yay -S ttf-google-fonts-typewolf ttf-ms-fonts ttf-mac-fonts otf-san-francisco ttf-ancient-fonts
+yay -S ttf-google-fonts-typewolf ttf-ms-fonts ttf-mac-fonts otf-san-francisco ttf-ancient-fonts libxft-bgra ttf-symbola
