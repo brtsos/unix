@@ -6,5 +6,6 @@ feh --bg-max --randomize ~/unix/files/images/* &
 xinput set-button-map 17 1 1 3 4 5 6 7
 # enable touch as click
 xinput set-prop 17 "libinput Tapping Enabled" 1
+setxkbmap pl
 xsettingsd &
 exec i3
