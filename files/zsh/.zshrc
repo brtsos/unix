@@ -116,3 +116,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 DISABLE_AUTO_UPDATE="true"
 
 export TERM=vt100
+

@@ -53,7 +53,7 @@ font xft:URWGothic-Book 11
 # auto lock the screen
 # exec --no-startup-id xautolock -time 5 -locker "i3lock -i '/home/brtsos/unix/files/images/ArchWaveGreY.png'"
 
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 120 'convert ~/unix/files/images/ArchWaveGrey.png -gravity Center -background black -extent "$(xdpyinfo | grep dimensions | cut -d" " -f7)" RGB:- | i3lock --raw "$(xdpyinfo | grep dimensions | cut -d" " -f7)":rgb -c "000000" -i /dev/stdin' ''
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 300 'convert ~/unix/files/images/ArchWaveGrey.png -gravity Center -background black -extent "$(xdpyinfo | grep dimensions | cut -d" " -f7)" RGB:- | i3lock --raw "$(xdpyinfo | grep dimensions | cut -d" " -f7)":rgb -c "000000" -i /dev/stdin' ''
 
 bindsym $mod+Shift+F4 exec "sed -i -e 's/Xft.dpi: 130/Xft.dpi: 192/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output DP-2 --auto --output eDP-1 --off"
 bindsym $mod+Shift+F5 exec "sed -i -e 's/Xft.dpi: 192/Xft.dpi: 96/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output DP-2 --off --output eDP-1 --auto"
