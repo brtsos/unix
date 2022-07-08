@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if grep '#order += "tztime local"' /home/brtsos/.config/i3status/config
+then
+    sed -i -e 's/#order += "tztime local"/order += "tztime local"/g' /home/brtsos/.config/i3status/config
+else
+    sed -i -e 's/order += "tztime local"/#order += "tztime local"/g' /home/brtsos/.config/i3status/config
+fi
+
+i3-msg reload
+i3-msg restart

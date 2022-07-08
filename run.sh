@@ -22,7 +22,7 @@ sudo mkdir -p /etc/bluetooth &&
 
 sudo chmod 700 ~/.local/share/gnupg &&
 
-sudo pacman -S acpi alsa-utils audacity blueman bluez bluez-libs bluez-utils composer curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor npm man mysql pavucontrol php7 php7-apache php7-gd php7-sodium php7-sqlite pipewire pipewire-pulse pulseaudio-alsa ruby simplescreenrecorder openssh udiskie unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler v4l-utils vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xdpyinfo xorg-xinput xorg-xkill xorg-xrandr zip zsh
+sudo pacman -S acpi alsa-utils audacity blueman bluez bluez-libs bluez-utils composer cups curl docker docker-compose dmenu dunst feh firefox git gnome-keyring gvfs htop i3-gaps i3lock i3status networkmanager network-manager-applet nm-connection-editor npm man mysql pavucontrol php7 php7-apache php7-gd php7-sodium php7-sqlite pipewire pipewire-pulse pulseaudio-alsa ruby simplescreenrecorder system-config-printer openssh udiskie unzip thefuck thunar thunar-archive-plugin ttf-dejavu tumbler v4l-utils vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch wget xarchiver xautolock xorg-xdpyinfo xorg-xinput xorg-xkill xorg-xrandr zip zsh
 
 # copy configs
 cp files/.zshenv ~/.zshenv &&
@@ -45,6 +45,13 @@ sudo cp files/etc/pam.d/passwd /etc/pam.d/passwd &&
 sudo cp files/etc/pam.d/login /etc/pam.d/login &&
 sudo cp files/etc/systemd/logind.conf /etc/systemd/logind.conf &&
 sudo cp files/etc/default/grub /etc/default/grub &&
+
+# add to printer group
+sudo usermod -aG lp brtsos
+
+# enable printer server
+sudo systemctl enable --now cups
+
 
 # start bluetooth
 sudo systemctl start bluetooth &&
@@ -99,6 +106,7 @@ makepkg -si &&
 yay -S 1password &&
 yay -S auto-cpufreq-git &&
 yay -S clipit &&
+yay -S brother-dcpj562dw
 yay -S google-chrome --noanswerclean &&
 yay -S i3exit &&
 yay -S i3-scrot &&
