@@ -23,8 +23,8 @@ default_border pixel 1
 default_floating_border normal
 
 # Floating windows (like upload/download window in Firefox)
-floating_minimum_size 75 x 50
-floating_maximum_size 1200 x 1080
+#floating_minimum_size 75 x 50
+#floating_maximum_size 1200 x 1080
 
 # Hide borders
 hide_edge_borders none
@@ -57,6 +57,7 @@ exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 30
 
 bindsym $mod+Shift+F4 exec "sed -i -e 's/Xft.dpi: 130/Xft.dpi: 192/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output DP-2 --auto --output eDP-1 --off"
 bindsym $mod+Shift+F5 exec "sed -i -e 's/Xft.dpi: 192/Xft.dpi: 96/g' /home/brtsos/.Xresources && xrdb ~/.Xresources && i3-msg restart && xrandr --output DP-2 --off --output eDP-1 --auto"
+bindsym $mod+Shift+N exec "/bin/bash /home/brtsos/unix/files/sendHeaderToNotion.sh"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

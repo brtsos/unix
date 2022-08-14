@@ -13,7 +13,7 @@ ruby "${HOME}/unix/checkFilesUpdate.rb"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="spaceship"
-ZSH_THEME="pi"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -92,11 +92,14 @@ alias conf="nvim ~/.config/zsh/.zshrc"
 #alias screen="bash ${HOME}/Scripts/autostart/screen"
 alias reload="source ~/.config/zsh/.zshrc"
 alias blue="bash ${HOME}/.scripts/blue.sh"
-#alias vim='nvim'
+alias v='vim'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias stan='phpstan analyse -c phpstan.neon.dist'
 alias salm='psalm -c psalm.xml'
 alias fix='php-cs-fixer fix'
+alias doff='docker-compose stop'
+alias don='docker-compose up -d'
+alias dco='v docker-compose.yml'
 #alias cp='cp -R'
 eval $(thefuck --alias)
 
@@ -116,4 +119,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 DISABLE_AUTO_UPDATE="true"
 
 export TERM=vt100
-
+#eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa_with_pass
